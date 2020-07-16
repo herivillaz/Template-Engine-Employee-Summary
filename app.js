@@ -10,7 +10,70 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
+const managerQuestions = [{
+    message: "Enter your GitHub username:",
+    name: "username"
+  },
+  {
+    type: "input",
+    name: "title",
+    message: "Title of your project: "
+  },
+  {
+    type: "input",
+    name: "description",
+    message: "Description: "
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "Installation: "
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "Usage: "
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "License: ",
+    choices: ["MIT", "GNU GPLv3"]
+  },
+  {
+    type: "input",
+    name: "contribute",
+    message: "What are the requirements for contributing to this project: "
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "List of Tests: "
+  },
+  {
+    type: "confirm",
+    name: "includeProfilePicture",
+    message: "Would you like Profile Picture to be displayed: ",
+  },
+  {
+    type: "confirm",
+    name: "includeEmail",
+    message: "Provide Email: "
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Email Address: ",
+    when: function (res) {
+      return res.includeEmail;
+    }
+  }
+  ]
+  inquirer
+    .prompt(userQuestions)
+    .then(function (answers) {
+      console.log(answers);
+    })
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -33,3 +96,6 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+
+// call render function in the app.js
