@@ -27,14 +27,18 @@ async function userPrompts() {
                 {
                     type: "input",
                     message: "Please enter the Employee's first and last name",
-                    name: "name"
+                    name: "name",
+                    validate: function(value) {
+                        if (!value.includes(" ") || (value.split("")[0] !== value.split("")[0].toUpperCase())){
+                            return "You need the format in Initial Capital for first and last name";
+                        }
+                        return true;
+                    }
+
                 }
                   
             ]);
-            if (!userInput.name.includes(" ") || (userInput.name.split("")[0] !== userInput.name.split("")[0].toUpperCase())){
-                return await checkingName();
-            }
-            return userInput.name;
+            
         } 
         const name = await checkingName();
 
