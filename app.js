@@ -23,24 +23,21 @@ async function userPrompts() {
     try {
     
         async function checkingName() {
-            const userInput = await inquirer.prompt([
+            return inquirer.prompt([
                 {
                     type: "input",
                     message: "Please enter the Employee's first and last name",
                     name: "name",
                     validate: function(value) {
-                        if (!value.includes(" ") || (value.split("")[0] !== value.split("")[0].toUpperCase())){
-                            return "You need the format in Initial Capital for first and last name";
+                        if (!value.includes(" ") || (value.split("")[0] !== value.split("")[0].toUpperCase()) || (value.split(" ")[1][0] !== value.split(" ")[1][0].toUpperCase())){
+                            return "You need the format in Initial Capital for first and last name i.e. Heri Villaz";
                         }
                         return true;
                     }
-
                 }
-                  
             ]);
-            
-        } 
-        const name = await checkingName();
+} 
+const { name }  = await checkingName();
 
         async function checkingId(){
             const userInput = await inquirer.prompt([
