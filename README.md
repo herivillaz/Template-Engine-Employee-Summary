@@ -7,7 +7,27 @@ Software engineering team generator command line application
 
 ![Home Page](/Assets/homepage.png)
 
-### You can access here: [Home Page]()
+### You can access here: [Home Page](/output/team.html)
+
+* The following Gif/videos demostrate the app Functionality
+
+* Adding Employee Manager:
+
+![Manager](/Assets/video1.gif)
+
+* Adding Employee Engineer:
+
+![Engineer](/Assets/video2.gif)
+
+* Adding Intern:
+
+![Intern](/Assets/video3.gif)
+
+* Final Output:
+
+![Output](/Assets/video4.gif)
+
+
 
 This project was made taking in consideration the requirements from Columbia Coding Boot Camp.
 
